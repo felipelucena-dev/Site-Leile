@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jéssica Almeida | Autora de Romances</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- CABEÇALHO / MENU -->
+    <header class="header">
+        <div class="logo">Jéssica Almeida</div>
+        <nav class="nav-links">
+            <a href="#livros">Livros</a>
+            <a href="#sobre">Sobre Mim</a>
+            <a href="#destaques">Jessverso</a>
+            <a href="#vip" class="btn-vip-nav">Leitor VIP</a>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO HERO (CAPA PRINCIPAL) -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">🖤 Autora Best-Seller na Amazon</span>
+            <h1>Romances com homens perigosos e mocinhas fortes</h1>
+            <p>Mergulhe no <strong>Jessverso</strong>, onde o perigo, a lealdade e a intensidade caminham lado a lado.</p>
+            <div class="hero-buttons">
+                <a href="#livros" class="btn-primary">Explorar Livros</a>
+                <a href="#vip" class="btn-secondary">Entrar para o Leitor VIP</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTAQUES DO INSTAGRAM / SEÇÕES -->
+    <section id="destaques" class="highlights-section">
+        <h2>Destaques & Universo</h2>
+        <div class="highlights-grid">
+            <div class="highlight-item">
+                <div class="circle-badge">Bienal</div>
+                <span>Bienal SP</span>
+            </div>
+            <div class="highlight-item">
+                <div class="circle-badge">Sobre</div>
+                <span>Sobre Mim 🦋</span>
+            </div>
+            <div class="highlight-item">
+                <div class="circle-badge">Leitoras</div>
+                <span>Grupo Leitoras</span>
+            </div>
+            <div class="highlight-item">
+                <div class="circle-badge">Dark</div>
+                <span>Implacáveis 🦋</span>
+            </div>
+            <div class="highlight-item">
+                <div class="circle-badge">Novo</div>
+                <span>Vem aí...</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- VITRINE DE LIVROS -->
+    <section id="livros" class="books-section">
+        <h2>Obras em Destaque</h2>
+        <p class="section-subtitle">Escolha sua próxima leitura viciante e garanta o seu exemplar:</p>
+        
+        <div class="books-grid">
+            <!-- Livro 1 -->
+            <div class="book-card">
+                <div class="book-tag">🔥 Best-seller em Romance</div>
+                <h3>A Noiva Substituta do Mafioso Amargurado</h3>
+                <p class="book-synopsis">
+                    Esmeralda Dias tinha um plano claro: trabalhar como modelo nos Estados Unidos, juntar dinheiro e garantir um futuro melhor para sua família no Brasil. O que ela não esperava era ficar presa em um relacionamento desgastado com Connor Miller...
+                </p>
+                <div class="book-cta">
+                    <span class="book-price">Disponível na Amazon e Kindle Unlimited</span>
+                    <a href="#" class="btn-buy" target="_blank">Comprar Livro</a>
+                </div>
+            </div>
+
+            <!-- Livro 2 -->
+            <div class="book-card">
+                <div class="book-tag">👑 Dark Romance / Máfia</div>
+                <h3>Cativa do Mafioso Viúvo</h3>
+                <p class="book-synopsis">
+                    Ninguém toca na mulher dele. Um enredo repleto de segredos, tensão implacável e uma mocinha forte que não vai abaixar a cabeça para um homem perigosamente poderoso.
+                </p>
+                <div class="book-cta">
+                    <span class="book-price">Disponível na Amazon</span>
+                    <a href="#" class="btn-buy" target="_blank">Comprar Livro</a>
+                </div>
+            </div>
+
+            <!-- Livro 3 -->
+            <div class="book-card">
+                <div class="book-tag">✨ Lançamento / Pré-venda</div>
+                <h3>Ele Vai Sequestrar a Princesa da Máfia Russa</h3>
+                <p class="book-synopsis">
+                    O mafioso mais perigoso de toda a Itália está obcecado. Ela vai deixá-lo completamente fora de si em uma história onde o amor e o perigo se misturam.
+                </p>
+                <div class="book-cta">
+                    <span class="book-price">Pré-venda Disponível</span>
+                    <a href="#" class="btn-buy" target="_blank">Garantir na Pré-venda</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO LEITOR VIP -->
+    <section id="vip" class="vip-section">
+        <div class="vip-container">
+            <h2>Seja um Leitor VIP</h2>
+            <p>Ao inscrever-se abaixo, você estará cadastrado para receber conteúdos exclusivos, avisos de lançamento e contos gratuitos por e-mail.</p>
+            
+            <form class="vip-form" onsubmit="event.preventDefault(); alert('Inscrição realizada com sucesso no Jessverso!');">
+                <div class="form-group">
+                    <label>E-mail *</label>
+                    <input type="email" required placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Nome *</label>
+                    <input type="text" required placeholder="Seu nome completo">
+                </div>
+                <div class="form-group">
+                    <label>Usuário no Instagram *</label>
+                    <input type="text" required placeholder="@meuusuario">
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp *</label>
+                    <input type="text" required placeholder="(11) 99999-9999">
+                </div>
+                <button type="submit" class="btn-submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>&copy; 2026 Jéssica Almeida • Todos os direitos reservados. Feito para o Jessverso 🖤</p>
+    </footer>
+
+</body>
+</html>
