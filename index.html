@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Web Lab - Laboratório de Engenharia</title>
+    
+    <!-- Blindagens de Segurança (Security Headers) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Secure Web Lab</h1>
+        <p>Laboratório de desenvolvimento seguro e análise de vulnerabilidades.</p>
+
+        <!-- SEÇÃO: Formulário de Contato / Simulação de Entrada de Dados -->
+        <section class="form-section">
+            <h2>Canal Seguro de Feedback</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="nome">Seu Nome:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+                </div>
+
+                <div class="input-group">
+                    <label for="mensagem">Mensagem / Relatório:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Escreva sua mensagem..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar com Segurança</button>
+            </form>
+        </section>
+
+        <p><a href="https://github.com" target="_blank" rel="noopener noreferrer">Acessar Repositório no GitHub</a></p>
+    </main>
+</body>
+</html>
