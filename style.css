@@ -1,247 +1,365 @@
-/* Configurações Globais - Estilo Dark/Elegante */
+:root {
+    --bg-dark: #0f0f11;
+    --bg-card: #18181b;
+    --accent: #e2b714;
+    --accent-glow: rgba(226, 183, 20, 0.2);
+    --text-main: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --border-color: #27272a;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Georgia', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
-    background-color: #0b0b0b; /* Fundo preto elegante */
-    color: #e0e0e0;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
     line-height: 1.6;
 }
 
-/* Container Principal para centralizar o layout */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
-
-/* Estilização dos títulos principais da página */
-.container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: normal;
-    color: #fff;
-    letter-spacing: 1px;
-}
-
-.container > p {
-    font-size: 1.1rem;
-    color: #b0b0b0;
-    margin-bottom: 2.5rem;
-}
-
-/* Cabeçalho */
-header {
+/* HEADER */
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5%;
-    border-bottom: 1px solid #222;
-    background-color: #0b0b0b;
+    padding: 20px 8%;
+    background-color: rgba(15, 15, 17, 0.9);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 1.1rem;
-    font-weight: bold;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #fff;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-main);
 }
 
-nav a {
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-muted);
     text-decoration: none;
-    color: #aaa;
-    margin-left: 2rem;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     transition: color 0.3s;
 }
 
-nav a:hover {
-    color: #fff;
+.nav-links a:hover {
+    color: var(--text-main);
 }
 
-/* Seção Principal (Hero) com clima cinematográfico */
+.btn-vip-nav {
+    border: 1px solid var(--text-main);
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: var(--text-main) !important;
+}
+
+/* HERO SECTION */
 .hero {
-    height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 100px 8%;
     text-align: center;
-    padding: 0 1rem;
-    background: linear-gradient(rgba(11,11,11,0.8), rgba(11,11,11,0.95)), url('background-placeholder.jpg');
-    background-size: cover;
+    background: radial-gradient(circle at center, #1e1e24 0%, var(--bg-dark) 70%);
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: normal;
-    color: #fff;
-    letter-spacing: 1px;
+.badge {
+    background: var(--accent-glow);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
-.hero-content p {
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    color: var(--text-main);
+}
+
+.hero p {
+    color: var(--text-muted);
     font-size: 1.1rem;
-    color: #b0b0b0;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
 }
 
-/* Seção de Livros / Obras */
-.books {
-    padding: 5rem 10%;
-    background-color: #121212;
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-main);
+}
+
+/* DESTAQUES */
+.highlights-section {
+    padding: 60px 8%;
     text-align: center;
+    border-top: 1px solid var(--border-color);
 }
 
-.books h2 {
-    font-size: 2.2rem;
-    margin-bottom: 3rem;
-    font-weight: normal;
-    color: #fff;
+.highlights-section h2 {
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
 }
 
-.book-grid {
+.highlights-grid {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.circle-badge {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    background: var(--bg-card);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.highlight-item span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* LIVROS */
+.books-section {
+    padding: 80px 8%;
+    background-color: #121215;
+}
+
+.books-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 50px;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
 .book-card {
-    background: #181818;
-    border: 1px solid #2a2a2a;
-    padding: 2.5rem;
-    width: 300px;
-    text-align: left;
-    transition: transform 0.3s ease, border-color 0.3s;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
 }
 
 .book-card:hover {
     transform: translateY(-5px);
-    border-color: #8b0000; /* Detalhe vermelho sutil ao passar o mouse */
+    border-color: var(--accent);
 }
 
-.book-card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    color: #fff;
-}
-
-.book-card p {
-    font-size: 0.95rem;
-    color: #999;
-}
-
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 4rem 2rem;
-    border-top: 1px solid #222;
-    background-color: #0b0b0b;
-}
-
-footer h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: normal;
-    color: #fff;
-}
-
-footer p {
-    color: #999;
-    margin-bottom: 1.5rem;
-}
-
-.social-links a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    border-bottom: 1px solid #8b0000;
-    padding-bottom: 2px;
-}
-
-/* Organização lógica dos campos do formulário */
-.form-section {
-    margin-top: 25px;
-    text-align: left;
-    background: #121212;
-    padding: 2rem;
-    border: 1px solid #2a2a2a;
-    border-radius: 6px;
-}
-
-.form-section h2 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #38bdf8;
-    text-align: center;
+.book-tag {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.input-group {
+.book-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
     margin-bottom: 15px;
 }
 
-.input-group label {
-    display: block;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    color: #94a3b8;
-}
-
-.input-group input, 
-.input-group textarea {
-    width: 100%;
-    padding: 12px;
-    background: #0f172a;
-    border: 1px solid #334155;
-    border-radius: 4px;
-    color: #f8fafc;
-    box-sizing: border-box;
+.book-synopsis {
     font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 25px;
 }
 
-.input-group input:focus,
-.input-group textarea:focus {
+.book-cta {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.book-price {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.btn-buy {
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.btn-buy:hover {
+    opacity: 0.85;
+}
+
+/* VIP SECTION */
+.vip-section {
+    padding: 90px 8%;
+    display: flex;
+    justify-content: center;
+}
+
+.vip-container {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.vip-container h2 {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.vip-container > p {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+.vip-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.form-group input {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 1rem;
     outline: none;
-    border-color: #38bdf8;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--accent);
 }
 
 .btn-submit {
-    width: 100%;
-    padding: 12px;
-    background: #38bdf8;
-    color: #0f172a;
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+    padding: 14px;
     border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
+    border-radius: 6px;
     font-size: 1rem;
-    transition: background 0.3s;
-    margin-top: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: opacity 0.3s;
 }
 
 .btn-submit:hover {
-    background: #7dd3fc;
+    opacity: 0.9;
 }
 
-/* Link de rodapé do container */
-.container > p:last-child {
-    margin-top: 2rem;
+/* RODAPÉ */
+.footer {
     text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
 
-.container > p:last-child a {
-    color: #38bdf8;
-    text-decoration: none;
-}
-
-.container > p:last-child a:hover {
-    text-decoration: underline;
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
 }
