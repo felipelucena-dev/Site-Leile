@@ -1,6 +1,3 @@
-/* ========================================== */
-/* CONFIGURAÇÕES GERAIS E CORES               */
-/* ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -28,9 +25,15 @@ body {
     border-bottom: 1px solid #222;
 }
 
+.logo-imagem {
+    line-height: 0;
+}
+
 .logo-imagem .img-assinatura {
-    height: 100px; /* Definido para 100px conforme solicitado */
+    height: 75px;
     object-fit: contain;
+    mix-blend-mode: screen; /* Faz o fundo preto da imagem sumir totalmente no cabeçalho */
+    background-color: transparent;
 }
 
 .nav-links {
@@ -282,25 +285,6 @@ body {
     margin-top: 30px;
     font-weight: 500;
     color: #fff;
-}
-
-.btn-insta {
-    display: inline-block;
-    color: #c5a880;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 8px;
-    padding: 8px 20px;
-    border: 1px solid rgba(197, 168, 128, 0.4);
-    border-radius: 4px;
-    background-color: rgba(197, 168, 128, 0.05);
-    transition: all 0.3s ease;
-}
-
-.btn-insta:hover {
-    background-color: #c5a880;
-    color: #0d0d0d;
 }
 
 /* ========================================== */
