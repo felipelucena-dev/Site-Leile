@@ -33,11 +33,3 @@ Antes de digitar qualquer linha de código, precisei pensar em como manter meu s
 ├── index.html       # Minha página principal com todas as views
 ├── style.css        # Minha estilização e tema escuro personalizado
 └── assets/images    # Minhas imagens tratadas localmente
-
-### Fase 2: Como Construí a Estrutura Base (HTML5 & CSS3)
-
-Desenvolvi a base visual focando em uma identidade escura e elegante, usando as fontes **Cinzel** (títulos) e **Plus Jakarta Sans** (textos):
-
-**Cabeçalho Fixo:** Criei um cabeçalho fixo no meu HTML com um logotipo interativo que sempre me leva de volta à aba de início (`mudarAba('inicio')`).
-
-**Seções e IDs:** Dividi o conteúdo em seções delimitadas por IDs para que cada aba do site funcionasse de forma fluida.
