@@ -35,9 +35,6 @@ Antes de digitar qualquer linha de código, precisei pensar em como manter meu s
 ├── index.html       # Minha página principal com todas as views
 ├── style.css        # Minha estilização e tema escuro personalizado
 └── assets/images    # Minhas imagens tratadas localmente
-🧱 Fase 2: Como Construí a Estrutura Base (HTML5 & CSS3)
-
-Depois que você colar essas três crases sozinhas logo abaixo da pasta, o bloco vai fechar na hora e a Fase 2 vai saltar para fora, ficando com o visual idêntico ao dos seus outros repositórios!
 
 🧱 Fase 2: Como Construí a Estrutura Base (HTML5 & CSS3)
 
