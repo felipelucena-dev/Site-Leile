@@ -1,4 +1,3 @@
-O código limpo, sem erros e com todas as fases devidamente separadas pelas linhas divisórias (---) já está pronto para você copiar e colar direto no seu arquivo README.md:
 Markdown
 
 # 🛡️ Meu Laboratório de Segurança Web & Landing Page: Do Zero ao Deploy | Autora Jéssica Almeida
@@ -82,7 +81,7 @@ Como o meu site redireciona leitores para plataformas externas (como a Amazon e 
 Segurança de Links: Adicionei os atributos de segurança defensiva em todos os meus links externos:
 HTML
 
-<a href="[https://www.amazon.com.br/stores/author/B0CVVC7432/allbooks](https://www.amazon.com.br/stores/author/B0CVVC7432/allbooks)" target="_blank" rel="noopener noreferrer">Amazon</a>
+<a href="https://www.amazon.com.br/stores/author/B0CVVC7432/allbooks" target="_blank" rel="noopener noreferrer">Amazon</a>
 
 📦 Fase 6: Meu Controle de Versão, Auditoria e Deploy no GitHub
 
@@ -128,5 +127,3 @@ CSS
     object-fit: cover; 
     object-position: center;
     transition: transform 0.5s ease;
-
-O Gemini é uma IA e pode cometer erros.
