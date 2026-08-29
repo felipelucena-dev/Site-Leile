@@ -105,7 +105,7 @@ git push origin main
 
 🎨 Fase 7: O Ajuste – Correção de Layout e Alinhamento de Capas
 
-Hoje identifiquei e resolvi um problema visual importante na grade de livros: as capas de tamanhos variados quebravam o alinhamento das caixas e geravam espacios vazios indesejados.
+Hoje identifiquei e resolvi um problema visual importante na grade de livros: as capas de tamanhos variados quebravam o alinhamento das caixas e geravam espaços vazios indesejados.
 
 A Solução Técnica Aplicada: Defini uma altura fixa padronizada para os containers e utilizei a propriedade de CSS object-fit: cover combinada com object-position: center.
 
@@ -130,4 +130,4 @@ CSS
 }
 
 
-O Gem
+O Gemini é uma IA e pode cometer erros.
