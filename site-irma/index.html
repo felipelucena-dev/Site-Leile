@@ -4,181 +4,603 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jéssica Almeida | Autora Best-Seller</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Parisienne&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- CSS Principal -->
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Parisienne&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* Estilo para garantir a foto maior da autora */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000000 !important;
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .estrelas-fundo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, rgba(197, 168, 128, 0.4), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 40px 70px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, rgba(197, 168, 128, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 150px 120px, rgba(255, 255, 255, 0.2), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 200px 250px, rgba(197, 168, 128, 0.3), rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 300px 300px;
+            animation: moverEstrelas 25s linear infinite;
+        }
+
+        @keyframes moverEstrelas {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-300px); }
+        }
+
+        .header {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+        }
+
+        .logo-texto span {
+            font-family: 'Parisienne', cursive; 
+            font-size: 48px; 
+            color: #c5a880; 
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(197, 168, 128, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #c5a880;
+        }
+
+        .btn-vip-nav {
+            border: 1px solid #c5a880;
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #c5a880 !important;
+            transition: background 0.3s, color 0.3s !important;
+        }
+
+        .btn-vip-nav:hover {
+            background: #c5a880;
+            color: #000 !important;
+        }
+
+        .main-conteudo {
+            position: relative;
+            z-index: 5;
+            min-height: 75vh;
+        }
+
+        .aba-conteudo {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .aba-conteudo.ativa {
+            display: block;
+            opacity: 1;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge-amazon {
+            background: rgba(197, 168, 128, 0.1);
+            border: 1px solid #c5a880;
+            color: #c5a880;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .avatar-boas-vindas {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            background: rgba(15, 15, 15, 0.8);
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            padding: 12px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            animation: flutuarAvatar 4s ease-in-out infinite;
+        }
+
+        @keyframes flutuarAvatar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .avatar-img-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #c5a880;
+            flex-shrink: 0;
+        }
+
+        .avatar-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .avatar-balao {
+            font-size: 14px;
+            color: #e2d9cd;
+            text-align: left;
+            font-style: italic;
+        }
+
+        .avatar-balao strong {
+            color: #c5a880;
+            font-style: normal;
+            display: block;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 38px;
+            line-height: 1.3;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            max-width: 700px;
+        }
+
+        .hero-botoes {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-primario, .btn-secundario {
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primario {
+            background-color: #c5a880;
+            color: #000;
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+        }
+
+        .btn-primario:hover {
+            background-color: #d8be96;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 168, 128, 0.5);
+        }
+
+        .btn-secundario {
+            background: transparent;
+            border: 1px solid #c5a880;
+            color: #c5a880;
+        }
+
+        .btn-secundario:hover {
+            background: rgba(197, 168, 128, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .secao-interna {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .secao-interna h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            color: #c5a880;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo-secao {
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .categoria-titulo {
+            font-family: 'Cinzel', serif;
+            color: #c5a880;
+            font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+            padding-bottom: 10px;
+        }
+
+        /* GRID PARA ALINHAR PERFEITAMENTE LADO A LADO */
+        .grade-livros {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card-livro {
+            background: #0a0a0a;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-livro:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #c5a880;
+            box-shadow: 0 15px 35px rgba(197, 168, 128, 0.25);
+        }
+
+        .capa-container {
+            width: 100%;
+            height: 350px; 
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background: #050505;
+        }
+
+        .capa-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .card-livro:hover .capa-container img {
+            transform: scale(1.04);
+        }
+
+        .card-livro h3 {
+            font-size: 15px;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .btn-livro {
+            display: block;
+            background: rgba(197, 168, 128, 0.1);
+            color: #c5a880;
+            border: 1px solid #c5a880;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-livro:hover {
+            background: #c5a880;
+            color: #000;
+        }
+
+        .mensagem-vazio {
+            color: #666;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .sobre-container-centralizado {
+            text-align: center; 
+            max-width: 700px; 
+            margin: 0 auto; 
+            padding: 40px 20px;
+        }
+
         .sobre-foto-centralizada img {
             width: 250px;
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 12px;
             border: 2px solid #c5a880;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(197, 168, 128, 0.2);
+            transition: transform 0.4s ease;
+        }
+
+        .sobre-foto-centralizada img:hover {
+            transform: scale(1.03);
+        }
+
+        .story-container-central {
+            display: block;
+            width: 290px;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.9), 0 0 25px rgba(197, 168, 128, 0.25);
+            border: 2px solid #c5a880;
+            background: #000;
+            animation: flutuarCardWhatsApp 3.5s ease-in-out infinite, pulsarBrilho 2s infinite alternate;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @keyframes flutuarCardWhatsApp {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(0.5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes pulsarBrilho {
+            0% { box-shadow: 0 15px 40px rgba(0,0,0,0.9), 0 0 15px rgba(197, 168, 128, 0.2); }
+            100% { box-shadow: 0 20px 50px rgba(0,0,0,0.95), 0 0 35px rgba(197, 168, 128, 0.5); }
+        }
+
+        .story-container-central:hover {
+            transform: scale(1.04);
+        }
+
+        .story-bg {
+            width: 100%;
+            display: block;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .story-container-central:hover .story-bg {
+            transform: scale(1.05);
+        }
+
+        .vip-container-centralizado {
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            text-align: center;
+        }
+
+        .form-vip {
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+            text-align: left;
+            background: rgba(10, 10, 10, 0.7);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .grupo-input input {
+            width: 100%; 
+            padding: 14px; 
+            background: #0d0d0d; 
+            border: 1px solid rgba(197, 168, 128, 0.4); 
+            color: #fff; 
+            border-radius: 6px; 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .grupo-input input:focus {
+            outline: none;
+            border-color: #c5a880;
+            box-shadow: 0 0 10px rgba(197, 168, 128, 0.2);
+        }
+
+        .btn-enviar-vip {
+            background-color: #c5a880; 
+            color: #0d0d0d; 
+            font-weight: 700; 
+            padding: 16px; 
+            border: none; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            margin-top: 10px; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            font-size: 15px; 
+            width: 100%; 
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-enviar-vip:hover {
+            background-color: #d8be96;
+            transform: translateY(-2px);
+        }
+
+        .footer-site {
+            position: relative;
+            z-index: 5;
+            background: #050505;
+            border-top: 1px solid rgba(197, 168, 128, 0.15);
+            padding: 40px 5%;
+            margin-top: 50px;
+        }
+
+        .footer-conteudo {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-coluna h3 {
+            font-family: 'Cinzel', serif;
+            color: #c5a880;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .footer-coluna p, .footer-coluna a {
+            color: #aaa;
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .footer-coluna a:hover {
+            color: #c5a880;
+        }
+
+        .footer-coluna.direitos {
+            text-align: right;
+        }
+
+        @media(max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .footer-coluna.direitos {
+                text-align: left;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- CABEÇALHO / MENU -->
+    <div class="estrelas-fundo"></div>
+
     <header class="header">
         <div class="logo-texto" style="cursor: pointer;" onclick="mudarAba('inicio')">
-            <span style="font-family: 'Parisienne', cursive; font-size: 56px; color: #c5a880; letter-spacing: 1px;">Jéssica Almeida</span>
+            <span>Jéssica Almeida</span>
         </div>
         <nav class="nav-links">
-            <a href="#inicio" onclick="mudarAba('inicio')">Início</a>
-            <a href="#livros" onclick="mudarAba('livros')">Livros</a>
-            <a href="#sobre" onclick="mudarAba('sobre')">Sobre Mim</a>
-            <a href="#jessverso" onclick="mudarAba('jessverso')">Jessverso</a>
-            <a href="#vip" onclick="mudarAba('vip')" class="btn-vip-nav">Leitor VIP</a>
+            <a onclick="mudarAba('inicio')">Início</a>
+            <a onclick="mudarAba('livros')">Livros</a>
+            <a onclick="mudarAba('sobre')">Sobre Mim</a>
+            <a onclick="mudarAba('jessverso')">Jessverso</a>
+            <a onclick="mudarAba('vip')" class="btn-vip-nav">Leitor VIP</a>
         </nav>
     </header>
 
-    <!-- CONTEÚDO DINÂMICO DAS ABAS -->
     <main class="main-conteudo">
 
-        <!-- ABA 1: INÍCIO -->
         <section id="aba-inicio" class="aba-conteudo ativa">
             <div class="hero">
                 <span class="badge-amazon">Autora Best-Seller na Amazon</span>
+                
+                <div class="avatar-boas-vindas">
+                    <div class="avatar-img-container">
+                        <img src="leile.png" alt="Jéssica Almeida">
+                    </div>
+                    <div class="avatar-balao">
+                        <strong>Jéssica Almeida</strong>
+                        "Seja muito bem-vinda ao meu universo! Prepare o coração para fortes emoções."
+                    </div>
+                </div>
+
                 <h1>ROMANCES COM HOMENS PERIGOSOS E MOCINHAS FORTES</h1>
                 <p>Mergulhe no Jessverso, onde o perigo, a lealdade e a intensidade caminham lado a lado.</p>
                 <div class="hero-botoes">
-                    <a href="#livros" class="btn-primario" onclick="mudarAba('livros')">Explorar Livros</a>
-                    <a href="#vip" class="btn-secundario" onclick="mudarAba('vip')">Conhecer Segredos</a>
+                    <a class="btn-primario" onclick="mudarAba('livros')">Explorar Livros</a>
+                    <a class="btn-secundario" onclick="mudarAba('vip')">Conhecer Segredos</a>
                 </div>
             </div>
         </section>
 
-        <!-- ABA 2: LIVROS -->
         <section id="aba-livros" class="aba-conteudo">
             <div class="secao-interna">
                 <h2>OBRAS & LIVROS</h2>
-                <p class="subtitulo-secao">Conheça os títulos que compõem o Jessverso.</p>
+                <p class="subtitulo-secao">Conheça todos os títulos que compõem o Jessverso.</p>
                 
-                <div class="grade-livros">
-                    <!-- Livro 1 -->
-                    <div class="card-livro">
-                        <div class="capa-container">
-                            <img src="livro1.jpeg" alt="Rejeitada pelo Mafioso">
-                        </div>
-                        <h3>Rejeitada pelo Mafioso</h3>
-                        <a href="#" class="btn-livro">Saiba Mais</a>
-                    </div>
+                <h3 class="categoria-titulo">✨ Lançamentos</h3>
+                <div class="grade-livros" id="grade-lancamentos"></div>
 
-                    <!-- Livro 2 -->
-                    <div class="card-livro">
-                        <div class="capa-container">
-                            <img src="livro2.jpeg" alt="O Viúvo">
-                        </div>
-                        <h3>O Viúvo</h3>
-                        <a href="#" class="btn-livro">Saiba Mais</a>
-                    </div>
+                <h3 class="categoria-titulo">📖 Livros Físicos</h3>
+                <div class="grade-livros" id="grade-fisicos"></div>
 
-                    <!-- Livro 3 -->
-                    <div class="card-livro">
-                        <div class="capa-container">
-                            <img src="livro3.jpeg" alt="Razões para Te Odiar">
-                        </div>
-                        <h3>Razões para Te Odiar</h3>
-                        <a href="#" class="btn-livro">Saiba Mais</a>
-                    </div>
-
-                    <!-- Livro 4 -->
-                    <div class="card-livro">
-                        <div class="capa-container">
-                            <img src="livro4.jpeg" alt="Sob o Domínio do Mafioso">
-                        </div>
-                        <h3>Sob o Domínio do Mafioso</h3>
-                        <a href="#" class="btn-livro">Saiba Mais</a>
-                    </div>
-
-                    <!-- Livro 5 -->
-                    <div class="card-livro">
-                        <div class="capa-container">
-                            <img src="livro5.jpeg" alt="A Noiva Substituta do Mafioso">
-                        </div>
-                        <h3>A Noiva Substituta do Mafioso</h3>
-                        <a href="#detalhe-noiva" class="btn-livro" onclick="mudarAba('detalhe-noiva')">Saiba Mais</a>
-                    </div>
-                </div>
+                <h3 class="categoria-titulo">📱 E-books (Amazon)</h3>
+                <div class="grade-livros" id="grade-amazon"></div>
             </div>
         </section>
 
-        <!-- PÁGINA INTERNA DE DETALHES: A NOIVA SUBSTITUTA DO MAFIOSO AMARGURADO -->
-        <section id="aba-detalhe-noiva" class="aba-conteudo">
-            <div style="max-width: 800px; margin: 0 auto; text-align: left; padding: 20px;">
-                
-                <button onclick="mudarAba('livros')" style="background: transparent; border: 1px solid #c5a880; color: #c5a880; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-bottom: 30px; font-family: 'Plus Jakarta Sans', sans-serif;">&larr; Voltar para os Livros</button>
-                
-                <h2 style="font-family: 'Cinzel', serif; font-size: 28px; color: #fff; margin-bottom: 20px;">A Noiva Substituta do Mafioso Amargurado</h2>
-                
-                <div style="background-color: #141414; border: 1px solid #222; border-radius: 8px; padding: 25px; color: #ccc; font-size: 15px; line-height: 1.8;">
-                    
-                    <p style="margin-bottom: 18px;">
-                        <strong>Maverick Malone</strong> é o chefe da máfia de Nova Iorque, um mafioso frio e cruel na mesma medida. Após sua noiva ser brutalmente assassinada para que não liderasse a organização, ele não apenas se vingou dos envolvidos, mas assumiu a liderança banhando de sangue as ruas do submundo.
-                    </p>
-
-                    <p style="margin-bottom: 18px;">
-                        <strong>Daiana Drexler</strong> perdeu tudo com a morte de sua única irmã. Com o mundo desmoronando ao seu redor e seus pais completamente perdidos no luto, ela se refugiou em um convento sem saber que teria que assumir o lugar da pessoa que mais amava no mundo.
-                    </p>
-
-                    <p style="margin-bottom: 18px; font-style: italic; color: #e0e0e0;">
-                        Um contrato de casamento foi imposto.<br>
-                        Para ele, nada além de uma aliança.<br>
-                        Para ela, a obrigação de se casar com o noivo de sua falecida irmã.
-                    </p>
-
-                    <p style="margin-bottom: 18px;">
-                        Ao chegar em casa e confrontar sua realidade, ela foge, sem saber que no momento em que seu noivo pôs os olhos nela, nada e ninguém a tiraria de suas mãos.
-                    </p>
-
-                    <blockquote style="border-left: 3px solid #c5a880; padding-left: 15px; margin: 20px 0; font-style: italic; color: #bbb;">
-                        “— Sabe, doce anjo, até gosto de uma boa caçada — sua voz grave e perigosa ecoa no silêncio e dou dois passos para trás.<br>
-                        — Como me encontrou? — Minha voz sai trêmula, quase inaudível.<br>
-                        — Se você me desobedecer e fugir outra vez só vai piorar as coisas e acredite em mim quando digo que sei exatamente como te punir — estremeço com seus dedos tocando minha bochecha em um toque firme, carregado de posse.<br>
-                        — Me deixe ir…<br>
-                        — Sua liberdade só virá com a minha morte — sua voz se torna ainda mais sombria. — Até lá, não existe lugar entre o céu e o inferno que não vá encontrá-la. Você me pertence. E eu não abro mão do que é meu.”
-                    </blockquote>
-
-                    <p style="margin-bottom: 18px;">
-                        Daiana será a única mulher a despertar o lado protetor e possessivo do mafioso amargurado, fazendo com que ele perca o controle pela primeira vez.
-                    </p>
-
-                    <p style="margin-bottom: 18px;">
-                        Entre perigos, um desejo avassalador e um passado entrelaçado antes do contrato ser firmado, o homem mais perigoso de Nova Iorque terá que decidir entre o seu dever com a máfia e a mulher que carrega o seu filho no ventre. Até onde ele será capaz de ir?
-                    </p>
-
-                    <p style="margin-bottom: 18px; font-size: 14px; color: #aaa;">
-                        “A Noiva Substituta do Mafioso Amargurado” é o terceiro livro da Série Acordos Implacáveis. Cada livro conta a história de um casal diferente, podendo ser lido separadamente sem prejudicar o entendimento.<br>
-                        <strong>NÃO contém abuso sexual, agressões e traição do mocinho com a mocinha.</strong>
-                    </p>
-
-                    <!-- BOTÃO DE CHAMADA PARA A LIVRARIA UNICORN BOOKS -->
-                    <div style="text-align: center; margin-top: 35px; padding-top: 25px; border-top: 1px solid #222;">
-                        <a href="https://www.unicornbooks.com.br/a-noiva-substituta-do-mafioso-amargurado" target="_blank" class="btn-primario" style="display: inline-block; padding: 14px 30px; background-color: #c5a880; color: #0d0d0d; font-weight: 600; border-radius: 6px; text-decoration: none;">Comprar na Unicorn Books</a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ABA 3: SOBRE MIM (CENTRALIZADO) -->
         <section id="aba-sobre" class="aba-conteudo">
-            <div class="sobre-container-centralizado" style="text-align: center; max-width: 700px; margin: 0 auto; padding: 20px;">
-                <h2 class="nome-autora-sobre" style="font-family: 'Cinzel', serif; color: #fff; margin-bottom: 20px;">JÉSSICA ALMEIDA</h2>
-                <div class="sobre-foto-centralizada" style="margin-bottom: 20px;">
+            <div class="sobre-container-centralizado">
+                <h2 style="font-family: 'Cinzel', serif; color: #c5a880; font-size: 28px; margin-bottom: 20px;">JÉSSICA ALMEIDA</h2>
+                <div class="sobre-foto-centralizada" style="margin-bottom: 25px;">
                     <img src="leile.png" alt="Jéssica Almeida">
                 </div>
-                <div class="sobre-texto-centralizado" style="color: #ccc; line-height: 1.8; font-size: 16px; text-align: center;">
+                <div class="sobre-texto-centralizado" style="color: #ccc; line-height: 1.8; font-size: 15px; margin-bottom: 25px;">
                     <p style="margin-bottom: 15px;">Sou casada há doze anos e mãe atípica do Bernardo, de sete anos.</p>
                     <p style="margin-bottom: 15px;">Com 34 anos de idade, resido em Brasília. Sou uma menina mulher, leve, que consegue envolver e prender os meus leitores, com uma leitura intensa, repleta de fortes emoções.</p>
                     <p style="margin-bottom: 15px;">Conhecida como Jess pelas leitoras, comecei a me aventurar no mundo da escrita em outubro de 2024, quando publiquei o meu primeiro livro em uma plataforma de leitura, onde me vi em um caminho sem volta, ficando completamente apaixonada pelo mundo dos romances.</p>
-                    <p style="margin-bottom: 20px;">Aqueles que desejam manter-se informados sobre as novidades da autora podem segui-la no Instagram.</p>
                 </div>
                 <div class="chamada-insta">
                     <a href="https://instagram.com/jessica_escritora" target="_blank" style="color: #c5a880; text-decoration: none; font-weight: 600; font-size: 16px;">Instagram: @jessica_escritora</a>
@@ -186,46 +608,46 @@
             </div>
         </section>
 
-        <!-- ABA 4: JESSVERSO -->
         <section id="aba-jessverso" class="aba-conteudo">
-            <div class="secao-interna">
-                <h2>O JESSVERSO</h2>
-                <p class="subtitulo-secao">Conexões, árvores de famílias e a linha do tempo das histórias.</p>
-                <p style="color: #aaa;">Conteúdo do Jessverso em breve...</p>
+            <div class="secao-interna" style="text-align: center;">
+                <h2 style="font-family: 'Cinzel', serif; color: #c5a880; font-size: 26px; margin-bottom: 8px;">GRUPO DE LEITORAS</h2>
+                <p style="color: #999; font-size: 14px; margin-bottom: 30px; font-weight: 300;">Clique na foto abaixo para entrar direto no nosso cantinho de Leitoras.</p>
+                
+                <a href="https://chat.whatsapp.com/H7be10EvHgoF2TTAztqiYe?s=cl&p=a&mlu=4" target="_blank" class="story-container-central" title="Entrar no Grupo do WhatsApp">
+                    <img src="storys.jpeg" alt="Implacáveis da Jess" class="story-bg">
+                </a>
             </div>
         </section>
 
-        <!-- ABA 5: LEITOR VIP -->
         <section id="aba-vip" class="aba-conteudo">
-            <div class="vip-container-centralizado" style="max-width: 600px; margin: 0 auto; padding: 40px 20px; text-align: center;">
-                <h2 style="font-family: 'Cinzel', serif; color: #fff; font-size: 26px; margin-bottom: 15px;">CONHEÇA MEUS SEGREDOS</h2>
-                <p class="subtitulo-secao" style="color: #aaa; margin-bottom: 35px; line-height: 1.6;">Garanta acesso a trechos secretos e surpresas preparadas especialmente para quem vive os meus romances. Se apaixone antes de todo mundo.</p>
+            <div class="vip-container-centralizado">
+                <h2 style="font-family: 'Cinzel', serif; color: #fff; font-size: 26px; margin-bottom: 10px;">CONHEÇA MEUS SEGREDOS</h2>
+                <p class="subtitulo-secao" style="color: #aaa; margin-bottom: 25px; line-height: 1.6;">Garanta acesso a trechos secretos e surpresas preparadas especialmente para quem vive os meus romances.</p>
                 
-                <form class="form-vip" onsubmit="event.preventDefault(); alert('Inscrição realizada com sucesso!');" style="display: flex; flex-direction: column; gap: 20px; text-align: left;">
+                <form class="form-vip" onsubmit="event.preventDefault(); alert('Inscrição realizada com sucesso!');">
                     <div class="grupo-input">
-                        <label for="whatsapp" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 14px;">WhatsApp *</label>
-                        <input type="text" id="whatsapp" required placeholder="(00) 00000-0000" style="width: 100%; padding: 14px; background: #0d0d0d; border: 1px solid #c5a880; color: #fff; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <label for="whatsapp" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 13px;">WhatsApp *</label>
+                        <input type="text" id="whatsapp" required placeholder="(00) 00000-0000">
                     </div>
                     <div class="grupo-input">
-                        <label for="email" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 14px;">E-mail *</label>
-                        <input type="email" id="email" required placeholder="seu@email.com" style="width: 100%; padding: 14px; background: #0d0d0d; border: 1px solid #c5a880; color: #fff; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <label for="email" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 13px;">E-mail *</label>
+                        <input type="email" id="email" required placeholder="seu@email.com">
                     </div>
                     <div class="grupo-input">
-                        <label for="nome" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 14px;">Nome *</label>
-                        <input type="text" id="nome" required placeholder="Seu nome completo" style="width: 100%; padding: 14px; background: #0d0d0d; border: 1px solid #c5a880; color: #fff; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <label for="nome" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 13px;">Nome *</label>
+                        <input type="text" id="nome" required placeholder="Seu nome completo">
                     </div>
                     <div class="grupo-input">
-                        <label for="instagram" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 14px;">Usuário no Instagram *</label>
-                        <input type="text" id="instagram" required placeholder="@meuusuario" style="width: 100%; padding: 14px; background: #0d0d0d; border: 1px solid #c5a880; color: #fff; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <label for="instagram" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 13px;">Usuário no Instagram *</label>
+                        <input type="text" id="instagram" required placeholder="@meuusuario">
                     </div>
-                    <button type="submit" class="btn-enviar-vip" style="background-color: #c5a880; color: #0d0d0d; font-weight: 700; padding: 16px; border: none; border-radius: 6px; cursor: pointer; margin-top: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; width: 100%; transition: background 0.3s;">Quero fazer parte</button>
+                    <button type="submit" class="btn-enviar-vip">Quero fazer parte</button>
                 </form>
             </div>
         </section>
 
     </main>
 
-    <!-- RODAPÉ COM OS LINKS REAIS E EXATOS -->
     <footer class="footer-site">
         <div class="footer-conteudo">
             <div class="footer-coluna">
@@ -237,8 +659,9 @@
             </div>
             <div class="footer-coluna">
                 <h3>CONTATO</h3>
-                <p>Assessoria / Contato profissional</p>
-                <p>contato@jessicaalmeida.com</p>
+                <p>Assessora: Aline Priscila</p>
+                <p>alineassessorialit@gmail.com</p>
+                <p>+55 18 99689-2462</p>
             </div>
             <div class="footer-coluna direitos">
                 <p>Jéssica Almeida &copy; 2026</p>
@@ -247,22 +670,63 @@
         </div>
     </footer>
 
-    <!-- SCRIPT SIMPLES PARA NAVEGAÇÃO ENTRE ABAS -->
     <script>
         function mudarAba(nomeAba) {
-            // Esconde todas as abas
             const abas = document.querySelectorAll('.aba-conteudo');
             abas.forEach(aba => aba.classList.remove('ativa'));
 
-            // Mostra a aba selecionada
             const abaAtiva = document.getElementById('aba-' + nomeAba);
             if (abaAtiva) {
                 abaAtiva.classList.add('ativa');
             }
 
-            // Rola a página suavemente para o topo
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        const lancamentos = [];
+
+        const livrosFisicos = [
+            { titulo: "A Noiva Rejeitada pelo Sheik", capa: "livro1.jpeg", link: "https://www.amazon.com.br/stores/author/B0CVVC7432/allbooks?ingress=0&visitId=e14b7d9a-c89e-447a-851c-27ed2e7ebd3e" },
+            { titulo: "O Agente", capa: "livro2.jpeg", link: "https://www.amazon.com.br/stores/author/B0CVVC7432/allbooks?ingress=0&visitId=e14b7d9a-c89e-447a-851c-27ed2e7ebd3e" },
+            { titulo: "O Viúvo", capa: "livro3.jpeg", link: "https://www.amazon.com.br/stores/author/B0CVVC7432/allbooks?ingress=0&visitId=e14b7d9a-c89e-447a-851c-27ed2e7ebd3e" },
+            { titulo: "O Federal", capa: "livro4.jpeg", link: "https://www.amazon.com.br/stores/author/B0CVVC7432/allbooks?ingress=0&visitId=e14b7d9a-c89e-447a-851c-27ed2e7ebd3e" },
+            { titulo: "A Noiva Substituta do Mafioso Amargurado", capa: "livro5.jpeg", link: "https://www.unicornbooks.com.br/a-noiva-substituta-do-mafioso-amargurado" }
+        ];
+
+        const ebooksAmazon = [];
+
+        function preencherGrade(idGrade, lista) {
+            const grade = document.getElementById(idGrade);
+            if (!grade) return;
+
+            grade.innerHTML = "";
+
+            if (lista.length === 0) {
+                grade.innerHTML = '<p class="mensagem-vazio">Em breve novas obras disponíveis nesta seção.</p>';
+                return;
+            }
+
+            lista.forEach((livro) => {
+                const card = document.createElement('div');
+                card.className = 'card-livro';
+                card.innerHTML = `
+                    <div class="capa-container">
+                        <img src="${livro.capa}" alt="${livro.titulo}">
+                    </div>
+                    <h3>${livro.titulo}</h3>
+                    <a href="${livro.link}" target="_blank" class="btn-livro">Comprar o Livro</a>
+                `;
+                grade.appendChild(card);
+            });
+        }
+
+        function carregarTodosLivros() {
+            preencherGrade('grade-lancamentos', lancamentos);
+            preencherGrade('grade-fisicos', livrosFisicos);
+            preencherGrade('grade-amazon', ebooksAmazon);
+        }
+
+        document.addEventListener("DOMContentLoaded", carregarTodosLivros);
     </script>
 </body>
 </html>
