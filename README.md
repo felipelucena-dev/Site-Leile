@@ -1,4 +1,4 @@
-🛡️ Meu Laboratório de Segurança Web & Landing Page: Do Zero ao Deploy | Autora Jéssica Almeida
+Meu Laboratório de Segurança Web & Landing Page: Do Zero ao Deploy | Autora Jéssica Almeida
 
 Este repositório é o meu laboratório prático e o resultado direto de como construí a Landing Page e o site oficial da escritora Jéssica Almeida do absoluto zero. Aqui, decidi unir o melhor dos dois mundos: um design editorial imersivo com uma forte camada de Cibersegurança, Hardening de Aplicações Web e Boas Práticas de Defesa.
 
@@ -108,7 +108,7 @@ git push origin main
 
 Fase 7: O Ajuste – Correção de Layout e Alinhamento de Capas
 
-Hoje identifiquei e resolvi um problema visual importante na grade de livros: as capas de tamanhos variados quebravam o alinhamento das caixas e geravam espacios vazios indesejados.
+Hoje identifiquei e resolvi um problema visual importante na grade de livros: as capas de tamanhos variados quebravam o alinhamento das caixas e geravam espaços vazios indesejados.
 
 A Solução Técnica Aplicada: Defini uma altura fixa padronizada para os containers e utilizei a propriedade de CSS object-fit: cover combinada com object-position: center.
 
