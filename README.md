@@ -19,8 +19,9 @@ Se você quiser criar um site idêntico ao meu seguindo exatamente o meu racioc�
 
     Fase 7: O Ajuste de Hoje – Correção de Layout e Alinhamento de Capas
 
-🛠️ Meu Guia Passo a Passo: Como Reproduzir Este Projeto Exatamente Como Eu Fiz
-Fase 1: Minha Arquitetura e Planejamento Seguro
+🛠️ Meu Guia Passo a Passo: Como Reproduzir Este Projeto Exatamente Como Eu Fiz:
+
+##Fase 1: Minha Arquitetura e Planejamento Seguro##
 
 Antes de digitar qualquer linha de código, precisei pensar em como manter meu site seguro contra invasões e vulnerabilidades comuns:
 
@@ -34,14 +35,15 @@ Plaintext
 ├── style.css        # Minha estilização e tema escuro personalizado
 └── assets/images    # Minhas imagens tratadas localmente
 
-Fase 2: Como Construí a Estrutura Base (HTML5 & CSS3)
+##Fase 2: Como Construí a Estrutura Base (HTML5 & CSS3)##
 
 Desenvolvi a base visual focando em uma identidade escura e elegante, usando as fontes Cinzel (títulos) e Plus Jakarta Sans (textos):
 
 Cabeçalho Fixo: Criei um cabeçalho fixo no meu HTML com um logotipo interativo que sempre me leva de volta à aba de início (mudarAba('inicio')).
 
 Seções e IDs: Dividi o conteúdo em seções delimitadas por IDs para que cada aba do site funcionasse de forma fluida.
-Fase 3: O Sistema SPA e a Navegação por Abas que Desenvolvi
+
+##Fase 3: O Sistema SPA e a Navegação por Abas que Desenvolvi##
 
 Para evitar que a página ficasse recarregando e para controlar o fluxo de navegação do usuário de forma limpa, criei minha própria lógica em JavaScript:
 
@@ -59,7 +61,7 @@ function mudarAba(nomeAba) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-Fase 4: O Hardening que Apliquei nos Formulários e a Mitigação de XSS
+##Fase 4: O Hardening que Apliquei nos Formulários e a Mitigação de XSS##
 
 Para proteger o meu formulário de captação de leads (Leitor VIP) contra injeções de códigos maliciosos (XSS) e garantir que os dados chegassem limpos, configurei validações rígidas:
 
@@ -77,7 +79,7 @@ HTML
     </div>
 </form>
 
-Fase 5: Como Blindei meus Links Externos contra Ataques de Terceiros
+##Fase 5: Como Blindei meus Links Externos contra Ataques de Terceiros##
 
 Como o meu site redireciona leitores para plataformas externas (como a Amazon e a livraria Unicorn Books), eu tomei o cuidado de me proteger contra ataques do tipo Tabnabbing e roubo de sessão:
 
@@ -86,7 +88,7 @@ HTML
 
 <a href="https://www.amazon.com.br/stores/author/B0CVVC7432/allbooks" target="_blank" rel="noopener noreferrer">Amazon</a>
 
-Fase 6: Meu Controle de Versão, Auditoria e Deploy no GitHub
+##Fase 6: Meu Controle de Versão, Auditoria e Deploy no GitHub##
 
 Para garantir que eu não perdesse nenhuma alteração e mantivesse o histórico auditável do meu código, segui estes comandos no meu terminal:
 
@@ -106,7 +108,7 @@ Bash
 
 git push origin main
 
-Fase 7: O Ajuste – Correção de Layout e Alinhamento de Capas
+##Fase 7: O Ajuste – Correção de Layout e Alinhamento de Capas#
 
 Hoje identifiquei e resolvi um problema visual importante na grade de livros: as capas de tamanhos variados quebravam o alinhamento das caixas e geravam espaços vazios indesejados.
 
