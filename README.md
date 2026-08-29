@@ -1,5 +1,3 @@
-Markdown
-
 # 🛡️ Meu Laboratório de Segurança Web & Landing Page: Do Zero ao Deploy | Autora Jéssica Almeida
 
 Este repositório é o meu laboratório prático e o resultado direto de como construí a Landing Page e o site oficial da escritora Jéssica Almeida do absoluto zero. Aqui, decidi unir o melhor dos dois mundos: um design editorial imersivo com uma forte camada de Cibersegurança, Hardening de Aplicações Web e Boas Práticas de Defesa.
@@ -55,14 +53,17 @@ function mudarAba(nomeAba) {
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+```
 
-🔒 Fase 4: O Hardening que Apliquei nos Formulários e a Mitigação de XSS
+---
+
+### 🔒 Fase 4: O Hardening que Apliquei nos Formulários e a Mitigação de XSS
 
 Para proteger o meu formulário de captação de leads (Leitor VIP) contra injeções de códigos maliciosos (XSS) e garantir que os dados chegassem limpos, configurei validações rígidas:
 
-Atributos Defensivos: Utilizei os atributos nativos do HTML de forma defensiva (type, required, placeholders orientativos):
-HTML
+**Atributos Defensivos:** Utilizei os atributos nativos do HTML de forma defensiva (`type`, `required`, `placeholders` orientativos):
 
+```html
 <form class="form-vip" onsubmit="event.preventDefault(); alert('Inscrição realizada com sucesso!');">
     <div class="grupo-input">
         <label for="whatsapp">WhatsApp *</label>
@@ -73,45 +74,56 @@ HTML
         <input type="email" id="email" required placeholder="seu@email.com">
     </div>
 </form>
+```
 
-🛡️ Fase 5: Como Blindei meus Links Externos contra Ataques de Terceiros
+---
+
+### 🛡️ Fase 5: Como Blindei meus Links Externos contra Ataques de Terceiros
 
 Como o meu site redireciona leitores para plataformas externas (como a Amazon e a livraria Unicorn Books), eu tomei o cuidado de me proteger contra ataques do tipo Tabnabbing e roubo de sessão:
 
-Segurança de Links: Adicionei os atributos de segurança defensiva em todos os meus links externos:
-HTML
+**Segurança de Links:** Adicionei os atributos de segurança defensiva em todos os meus links externos:
 
+```html
 <a href="https://www.amazon.com.br/stores/author/B0CVVC7432/allbooks" target="_blank" rel="noopener noreferrer">Amazon</a>
+```
 
-📦 Fase 6: Meu Controle de Versão, Auditoria e Deploy no GitHub
+---
+
+### 📦 Fase 6: Meu Controle de Versão, Auditoria e Deploy no GitHub
 
 Para garantir que eu não perdesse nenhuma alteração e mantivesse o histórico auditável do meu código, segui estes comandos no meu terminal:
 
-Inicialização e Adição: Inicializei o repositório e adicionei meus arquivos:
-Bash
+**Inicialização e Adição:** Inicializei o repositório e adicionei meus arquivos:
 
+```bash
 git init
 git add .
+```
 
-Commit Estruturado: Fiz o commit detalhado do meu progresso:
-Bash
+**Commit Estruturado:** Fiz o commit detalhado do meu progresso:
 
+```bash
 git commit -m "feat: implementa hardening de formulários e estrutura SPA do meu site"
+```
 
-Envio para o Repositório: Enviei tudo para o meu repositório remoto no GitHub:
-Bash
+**Envio para o Repositório:** Enviei tudo para o meu repositório remoto no GitHub:
 
+```bash
 git push origin main
+```
 
-🎨 Fase 7: O Ajuste – Correção de Layout e Alinhamento de Capas
+---
+
+### 🎨 Fase 7: O Ajuste – Correção de Layout e Alinhamento de Capas
 
 Hoje identifiquei e resolvi um problema visual importante na grade de livros: as capas de tamanhos variados quebravam o alinhamento das caixas e geravam espaços vazios indesejados.
 
-A Solução Técnica Aplicada: Defini uma altura fixa padronizada para os containers e utilizei a propriedade de CSS object-fit: cover combinada com object-position: center.
+**A Solução Técnica Aplicada:** Defini uma altura fixa padronizada para os containers e utilizei a propriedade de CSS `object-fit: cover` combinada com `object-position: center`.
 
-Código Implementado no CSS:
-CSS
+**Código Implementado no CSS:**
 
+```css
 .capa-container {
     width: 100%;
     height: 350px; 
@@ -127,3 +139,5 @@ CSS
     object-fit: cover; 
     object-position: center;
     transition: transform 0.5s ease;
+}
+```
