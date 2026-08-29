@@ -1,3 +1,4 @@
+O código limpo, sem erros e com todas as fases devidamente separadas pelas linhas divisórias (---) já está pronto para você copiar e colar direto no seu arquivo README.md:
 Markdown
 
 # 🛡️ Meu Laboratório de Segurança Web & Landing Page: Do Zero ao Deploy | Autora Jéssica Almeida
