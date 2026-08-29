@@ -108,7 +108,7 @@ Bash
 
 git push origin main
 
-Fase 7: O Ajuste de Hoje – Correção de Layout e Alinhamento de Capas
+Fase 7: O Ajuste – Correção de Layout e Alinhamento de Capas
 
 Hoje identifiquei e resolvi um problema visual importante na grade de livros: as capas de tamanhos variados quebravam o alinhamento das caixas e geravam espaços vazios indesejados.
 
