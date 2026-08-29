@@ -35,7 +35,7 @@ Antes de digitar qualquer linha de código, precisei pensar em como manter meu s
 └── assets/images    # Minhas imagens tratadas localmente
 
 
-### Fase 2: Como Construí a Estrutura Base (HTML5 & CSS3)
+## Fase 2: Como Construí a Estrutura Base (HTML5 & CSS3)
 
 Desenvolvi a base visual focando em uma identidade escura e elegante, usando as fontes **Cinzel** (títulos) e **Plus Jakarta Sans** (textos):
 
