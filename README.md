@@ -128,7 +128,5 @@ CSS
     object-fit: cover; 
     object-position: center;
     transition: transform 0.5s ease;
-}
-
 
 O Gemini é uma IA e pode cometer erros.
