@@ -3,266 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jéssica Almeida | Autora Best-Seller</title>
-    <!-- Google Fonts -->
+    <title>Jéssica Almeida | Romances</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- CSS Principal -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Estilo para garantir a foto maior da autora */
-        .sobre-foto-centralizada img {
-            width: 250px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 2px solid #c5a880;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-    </style>
 </head>
 <body>
 
-    <!-- CABEÇALHO / MENU -->
     <header class="header">
-        <div class="logo-imagem" style="cursor: pointer;" onclick="mudarAba('inicio')">
-            <img src="jessica.png" alt="Jéssica Almeida" class="img-assinatura">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Jéssica Almeida</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Início</a>
+                <a href="#books">Livros</a>
+                <a href="#about">Sobre Mim</a>
+                <a href="#jessverso">Jessverso</a>
+                <a href="#vip" class="vip-btn">LEITOR VIP</a>
+            </nav>
         </div>
-        <nav class="nav-links">
-            <a href="#inicio" onclick="mudarAba('inicio')">Início</a>
-            <a href="#livros" onclick="mudarAba('livros')">Livros</a>
-            <a href="#sobre" onclick="mudarAba('sobre')">Sobre Mim</a>
-            <a href="#jessverso" onclick="mudarAba('jessverso')">Jessverso</a>
-            <a href="#vip" onclick="mudarAba('vip')" class="btn-vip-nav">Leitor VIP</a>
-        </nav>
     </header>
 
-    <!-- CONTEÚDO DINÂMICO DAS ABAS -->
-    <main class="main-conteudo">
+    <main>
+        <!-- Seção Home / Início -->
+        <section id="home" class="hero-section">
+            
+            <div class="hero-wrapper">
+                
+                <div class="hero-left">
+                    <div class="author-card-box">
+                        <div class="author-avatar" style="background-image: url('leile.png')"></div>
+                        <div class="author-content">
+                            <span class="author-tag">✉ MENSAGEM DA AUTORA</span>
+                            <p>"Bem-vinda ao meu mundo. Aqui, cada regra tem um motivo, cada toque esconde uma descoberta, e cada amor encontra seu próprio caminho. Entre comigo em um universo de romances, se estiver pronta para sentir."</p>
+                        </div>
+                    </div>
 
-        <!-- ABA 1: INÍCIO -->
-        <section id="aba-inicio" class="aba-conteudo ativa">
-            <div class="hero">
-                <span class="badge-amazon">Autora Best-Seller na Amazon</span>
-                <h1>ROMANCES COM HOMENS PERIGOSOS E MOCINHAS FORTES</h1>
-                <p>Mergulhe no Jessverso, onde o perigo, a lealdade e a intensidade caminham lado a lado.</p>
-                <div class="hero-botoes">
-                    <a href="#livros" class="btn-primario" onclick="mudarAba('livros')">Explorar Livros</a>
-                    <a href="#vip" class="btn-secundario" onclick="mudarAba('vip')">Conhecer Segredos</a>
+                    <h1 class="main-title">
+                        Onde o Perigo<br>
+                        Encontra o<br>
+                        Desejo
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Romances intensos, paixões inesquecíveis e histórias para sentir até a última página.
+                    </p>
+
+                    <div class="action-buttons">
+                        <a href="#books" class="btn-custom btn-primary-solid">
+                            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                            Explorar Livros
+                        </a>
+                        <a href="#books" class="btn-custom btn-outline-pill" onclick="openDetailsModal(event, 'launch')">
+                            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v3m0 12v3M3 12h3m12 0h3m-2.636-6.364l-2.122 2.122m-9.9 9.9l-2.122 2.122m0-14.142l2.122 2.122m9.9 9.9l2.122 2.122"/></svg>
+                            Ver Lançamento
+                        </a>
+                        <a href="#secrets" class="btn-custom btn-outline-pill">
+                            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Conhecer Segredos
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Quadro da Direita (Home Carrossel + Botão Alinhado Acima) -->
+                <div class="hero-right">
+                    <div class="hero-right-column">
+                        <div class="top-launch-container">
+                            <a href="#" class="top-launch-pill" onclick="openDetailsModal(event, 'launch')">
+                                <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 3v3m0 12v3M3 12h3m12 0h3m-2.636-6.364l-2.122 2.122m-9.9 9.9l-2.122 2.122m0-14.142l2.122 2.122m9.9 9.9l2.122 2.122"/></svg>
+                                <span>VER LANÇAMENTO</span>
+                            </a>
+                        </div>
+                        <div class="book-card-container">
+                            <div class="media-frame-box">
+                                <div class="media-slide active-slide">
+                                    <img src="cativadomafioso.JPEG" alt="Cativa do Mafioso" class="media-element photo-enhanced" loading="eager">
+                                </div>
+                                <div class="media-slide" id="slide-video">
+                                    <video id="launch-video" controls playsinline class="media-element video-proportional">
+                                        <source src="videolançamento.MP4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="media-slide"><img src="lançamento1.PNG" class="media-element photo-enhanced" loading="lazy"></div>
+                                <div class="media-slide"><img src="lançamento2.PNG" class="media-element photo-enhanced" loading="lazy"></div>
+                                <div class="media-slide"><img src="lançamento3.PNG" class="media-element photo-enhanced" loading="lazy"></div>
+                                <div class="media-slide"><img src="lançamento4.PNG" class="media-element photo-enhanced" loading="lazy"></div>
+                                <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+                                <button class="carousel-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- ABA 2: LIVROS -->
-        <section id="aba-livros" class="aba-conteudo">
-            <div class="secao-interna">
-                <h2>OBRAS & LIVROS</h2>
-                <p class="subtitulo-secao">Conheça os títulos que compõem o Jessverso.</p>
-                
-                <div class="grade-livros">
+        <!-- SEÇÃO LIVROS -->
+        <section id="books" class="books-section">
+            
+            <!-- 1. Lançamento Fixo -->
+            <div class="books-container">
+                <div class="section-header-title">
+                    <span class="section-icon">✨</span>
+                    <h2>LANÇAMENTOS</h2>
+                </div>
+
+                <div class="launch-showcase-box">
+                    <div class="launch-media-side">
+                        <div class="novo-badge">NOVO</div>
+                        <div class="book-card-container" style="max-width: 100%;">
+                            <div class="media-frame-box" style="height: 480px;">
+                                <div class="media-slide active-slide">
+                                    <img src="cativadomafioso.JPEG" alt="Cativa do Mafioso" class="media-element photo-enhanced" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="launch-info-side">
+                        <span class="launch-sub-cat">ROMANCE • VOLUME I</span>
+                        <h3 class="launch-book-title">Cativa do Mafioso Viúvo</h3>
+                        <div class="launch-tags-row">
+                            <span class="ltag">Romance Proibido na Máfia</span>
+                            <span class="ltag">Age Gap</span>
+                            <span class="ltag">mocinha virgem</span>
+                            <span class="ltag">mocinho controlador</span>
+                        </div>
+                        <p class="launch-book-desc">
+                            Valentina nunca imaginou que seu destino estaria atado a uma família poderosa. Dante governa com frieza absoluta, mas olhar nos olhos dela a faz algo enterrado despertar.
+                        </p>
+                        <div class="launch-action-buttons">
+                            <a href="#" class="btn-gold-solid" onclick="openDetailsModal(event, 'launch')">
+                                <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                Ver Lançamento
+                            </a>
+                            <a href="#" class="btn-gold-outline" onclick="openTrailerModal(event)">
+                                <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Trailer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Livros Físicos -->
+            <div class="books-container" style="margin-top: 5rem;">
+                <div class="section-header-title">
+                    <span class="section-icon">📖</span>
+                    <h2>LIVROS FÍSICOS</h2>
+                </div>
+
+                <div class="physical-books-grid">
                     <!-- Livro 1 -->
-                    <div class="card-livro">
-                        <div class="capa-container">
-                            <img src="livro1.jpeg" alt="Rejeitada pelo Mafioso">
+                    <div class="physical-book-card" onclick="openDetailsModal(event, 'book1')">
+                        <div class="pbook-img" style="background-image: url('livro1.jpeg')"></div>
+                        <div class="pbook-info">
+                            <span class="pbook-cat">ROMANCE VOLUMOSO</span>
+                            <h4>Rejeitada pelo Mafioso Viúvo e Perverso</h4>
+                            <span class="btn-buy-outline">
+                                <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                Detalhes
+                            </span>
                         </div>
-                        <h3>Rejeitada pelo Mafioso</h3>
-                        <a href="#" class="btn-livro">Saiba Mais</a>
                     </div>
-
                     <!-- Livro 2 -->
-                    <div class="card-livro">
-                        <div class="capa-container">
-                            <img src="livro2.jpeg" alt="O Viúvo">
+                    <div class="physical-book-card" onclick="openDetailsModal(event, 'book2')">
+                        <div class="pbook-img" style="background-image: url('livro2.jpeg')"></div>
+                        <div class="pbook-info">
+                            <span class="pbook-cat">ROMANCE VOLUME II</span>
+                            <h4>O Viúvo</h4>
+                            <span class="btn-buy-outline">
+                                <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                Detalhes
+                            </span>
                         </div>
-                        <h3>O Viúvo</h3>
-                        <a href="#" class="btn-livro">Saiba Mais</a>
                     </div>
-
                     <!-- Livro 3 -->
-                    <div class="card-livro">
-                        <div class="capa-container">
-                            <img src="livro3.jpeg" alt="Razões para Te Odiar">
+                    <div class="physical-book-card" onclick="openDetailsModal(event, 'book3')">
+                        <div class="pbook-img" style="background-image: url('livro3.jpeg')"></div>
+                        <div class="pbook-info">
+                            <span class="pbook-cat">STANDALONE</span>
+                            <h4>Razões para Te Odiar</h4>
+                            <span class="btn-buy-outline">
+                                <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                Detalhes
+                            </span>
                         </div>
-                        <h3>Razões para Te Odiar</h3>
-                        <a href="#" class="btn-livro">Saiba Mais</a>
                     </div>
-
                     <!-- Livro 4 -->
-                    <div class="card-livro">
-                        <div class="capa-container">
-                            <img src="livro4.jpeg" alt="Sob o Domínio do Mafioso">
+                    <div class="physical-book-card" onclick="openDetailsModal(event, 'book4')">
+                        <div class="pbook-img" style="background-image: url('livro4.jpeg')"></div>
+                        <div class="pbook-info">
+                            <span class="pbook-cat">STANDALONE</span>
+                            <h4>Sob o Domínio do Mafioso Possessivo</h4>
+                            <span class="btn-buy-outline">
+                                <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                Detalhes
+                            </span>
                         </div>
-                        <h3>Sob o Domínio do Mafioso</h3>
-                        <a href="#" class="btn-livro">Saiba Mais</a>
                     </div>
-
                     <!-- Livro 5 -->
-                    <div class="card-livro">
-                        <div class="capa-container">
-                            <img src="livro5.jpeg" alt="A Noiva Substituta do Mafioso">
+                    <div class="physical-book-card" onclick="openDetailsModal(event, 'book5')">
+                        <div class="pbook-img" style="background-image: url('livro5.jpeg')"></div>
+                        <div class="pbook-info">
+                            <span class="pbook-cat">STANDALONE</span>
+                            <h4>A Noiva Substituta do Mafioso Amargurado</h4>
+                            <span class="btn-buy-outline">
+                                <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                Detalhes
+                            </span>
                         </div>
-                        <h3>A Noiva Substituta do Mafioso</h3>
-                        <a href="#detalhe-noiva" class="btn-livro" onclick="mudarAba('detalhe-noiva')">Saiba Mais</a>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- PÁGINA INTERNA DE DETALHES: A NOIVA SUBSTITUTA DO MAFIOSO AMARGURADO -->
-        <section id="aba-detalhe-noiva" class="aba-conteudo">
-            <div style="max-width: 800px; margin: 0 auto; text-align: left; padding: 20px;">
-                
-                <button onclick="mudarAba('livros')" style="background: transparent; border: 1px solid #c5a880; color: #c5a880; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-bottom: 30px; font-family: 'Plus Jakarta Sans', sans-serif;">&larr; Voltar para os Livros</button>
-                
-                <h2 style="font-family: 'Cinzel', serif; font-size: 28px; color: #fff; margin-bottom: 20px;">A Noiva Substituta do Mafioso Amargurado</h2>
-                
-                <div style="background-color: #141414; border: 1px solid #222; border-radius: 8px; padding: 25px; color: #ccc; font-size: 15px; line-height: 1.8;">
-                    
-                    <p style="margin-bottom: 18px;">
-                        <strong>Maverick Malone</strong> é o chefe da máfia de Nova Iorque, um mafioso frio e cruel na mesma medida. Após sua noiva ser brutalmente assassinada para que não liderasse a organização, ele não apenas se vingou dos envolvidos, mas assumiu a liderança banhando de sangue as ruas do submundo.
-                    </p>
+<!-- 3. E-Books Amazon -->
+            <div class="books-container" style="margin-top: 5rem;">
+                <div class="section-header-title">
+                    <span class="section-icon">📱</span>
+                    <h2>E-BOOKS (AMAZON)</h2>
+                </div>
 
-                    <p style="margin-bottom: 18px;">
-                        <strong>Daiana Drexler</strong> perdeu tudo com a morte de sua única irmã. Com o mundo desmoronando ao seu redor e seus pais completamente perdidos no luto, ela se refugiou em um convento sem saber que teria que assumir o lugar da pessoa que mais amava no mundo.
-                    </p>
+                <div class="ebooks-grid">
+                    <script>
+                        for (let i = 1; i <= 28; i++) {
+                            document.write(`
+                                <div class="ebook-card">
+                                    <div class="ebook-img" style="background-image: url('capa${i}.jpeg')" loading="lazy">
+                                        <span class="ebook-tag">E-BOOK</span>
+                                    </div>
+                                    <div class="ebook-info">
+                                        <h5>Vol. ${i}</h5>
+                                        <a href="#" class="ebook-buy-btn">
+                                            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                            COMPRAR
+                                        </a>
+                                    </div>
+                                </div>
+                            `);
+                        }
+                    </script>
+                </div>
+            </div>
 
-                    <p style="margin-bottom: 18px; font-style: italic; color: #e0e0e0;">
-                        Um contrato de casamento foi imposto.<br>
-                        Para ele, nada além de uma aliança.<br>
-                        Para ela, a obrigação de se casar com o noivo de sua falecida irmã.
-                    </p>
-
-                    <p style="margin-bottom: 18px;">
-                        Ao chegar em casa e confrontar sua realidade, ela foge, sem saber que no momento em que seu noivo pôs os olhos nela, nada e ninguém a tiraria de suas mãos.
-                    </p>
-
-                    <blockquote style="border-left: 3px solid #c5a880; padding-left: 15px; margin: 20px 0; font-style: italic; color: #bbb;">
-                        “— Sabe, doce anjo, até gosto de uma boa caçada — sua voz grave e perigosa ecoa no silêncio e dou dois passos para trás.<br>
-                        — Como me encontrou? — Minha voz sai trêmula, quase inaudível.<br>
-                        — Se você me desobedecer e fugir outra vez só vai piorar as coisas e acredite em mim quando digo que sei exatamente como te punir — estremeço com seus dedos tocando minha bochecha em um toque firme, carregado de posse.<br>
-                        — Me deixe ir…<br>
-                        — Sua liberdade só virá com a minha morte — sua voz se torna ainda mais sombria. — Até lá, não existe lugar entre o céu e o inferno que não vá encontrá-la. Você me pertence. E eu não abro mão do que é meu.”
-                    </blockquote>
-
-                    <p style="margin-bottom: 18px;">
-                        Daiana será a única mulher a despertar o lado protetor e possessivo do mafioso amargurado, fazendo com que ele perca o controle pela primeira vez.
-                    </p>
-
-                    <p style="margin-bottom: 18px;">
-                        Entre perigos, um desejo avassalador e um passado entrelaçado antes do contrato ser firmado, o homem mais perigoso de Nova Iorque terá que decidir entre o seu dever com a máfia e a mulher que carrega o seu filho no ventre. Até onde ele será capaz de ir?
-                    </p>
-
-                    <p style="margin-bottom: 18px; font-size: 14px; color: #aaa;">
-                        “A Noiva Substituta do Mafioso Amargurado” é o terceiro livro da Série Acordos Implacáveis. Cada livro conta a história de um casal diferente, podendo ser lido separadamente sem prejudicar o entendimento.<br>
-                        <strong>NÃO contém abuso sexual, agressões e traição do mocinho com a mocinha.</strong>
-                    </p>
-
-                    <!-- BOTÃO DE CHAMADA PARA A LIVRARIA UNICORN BOOKS -->
-                    <div style="text-align: center; margin-top: 35px; padding-top: 25px; border-top: 1px solid #222;">
-                        <a href="https://www.unicornbooks.com.br/a-noiva-substituta-do-mafioso-amargurado" target="_blank" class="btn-primario" style="display: inline-block; padding: 14px 30px; background-color: #c5a880; color: #0d0d0d; font-weight: 600; border-radius: 6px; text-decoration: none;">Comprar na Unicorn Books</a>
-                    </div>
-
+        <!-- Seção de Estatísticas -->
+        <section class="stats-bar">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h2>5+</h2>
+                    <span>Obras Publicadas</span>
+                </div>
+                <div class="stat-box">
+                    <h2>50K+</h2>
+                    <span>Leitoras no Jessverso</span>
+                </div>
+                <div class="stat-box">
+                    <h2>#1</h2>
+                    <span>Bestseller Amazon</span>
+                </div>
+                <div class="stat-box">
+                    <h2>34</h2>
+                    <span>Anos de Histórias</span>
                 </div>
             </div>
         </section>
-
-        <!-- ABA 3: SOBRE MIM (CENTRALIZADO) -->
-        <section id="aba-sobre" class="aba-conteudo">
-            <div class="sobre-container-centralizado" style="text-align: center; max-width: 700px; margin: 0 auto; padding: 20px;">
-                <h2 class="nome-autora-sobre" style="font-family: 'Cinzel', serif; color: #fff; margin-bottom: 20px;">JÉSSICA ALMEIDA</h2>
-                <div class="sobre-foto-centralizada" style="margin-bottom: 20px;">
-                    <img src="leile.png" alt="Jéssica Almeida">
-                </div>
-                <div class="sobre-texto-centralizado" style="color: #ccc; line-height: 1.8; font-size: 16px; text-align: center;">
-                    <p style="margin-bottom: 15px;">Sou casada há doze anos e mãe atípica do Bernardo, de sete anos.</p>
-                    <p style="margin-bottom: 15px;">Com 34 anos de idade, resido em Brasília. Sou uma menina mulher, leve, que consegue envolver e prender os meus leitores, com uma leitura intensa, repleta de fortes emoções.</p>
-                    <p style="margin-bottom: 15px;">Conhecida como Jess pelas leitoras, comecei a me aventurar no mundo da escrita em outubro de 2024, quando publiquei o meu primeiro livro em uma plataforma de leitura, onde me vi em um caminho sem volta, ficando completamente apaixonada pelo mundo dos romances.</p>
-                    <p style="margin-bottom: 20px;">Aqueles que desejam manter-se informados sobre as novidades da autora podem segui-la no Instagram.</p>
-                </div>
-                <div class="chamada-insta">
-                    <a href="https://instagram.com/jessica_escritora" target="_blank" style="color: #c5a880; text-decoration: none; font-weight: 600; font-size: 16px;">Instagram: @jessica_escritora</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABA 4: JESSVERSO -->
-        <section id="aba-jessverso" class="aba-conteudo">
-            <div class="secao-interna">
-                <h2>O JESSVERSO</h2>
-                <p class="subtitulo-secao">Conexões, árvores de famílias e a linha do tempo das histórias.</p>
-                <p style="color: #aaa;">Conteúdo do Jessverso em breve...</p>
-            </div>
-        </section>
-
-        <!-- ABA 5: LEITOR VIP -->
-        <section id="aba-vip" class="aba-conteudo">
-            <div class="vip-container-centralizado" style="max-width: 600px; margin: 0 auto; padding: 40px 20px; text-align: center;">
-                <h2 style="font-family: 'Cinzel', serif; color: #fff; font-size: 26px; margin-bottom: 15px;">CONHEÇA MEUS SEGREDOS</h2>
-                <p class="subtitulo-secao" style="color: #aaa; margin-bottom: 35px; line-height: 1.6;">Garanta acesso a trechos secretos e surpresas preparadas especialmente para quem vive os meus romances. Se apaixone antes de todo mundo.</p>
-                
-                <form class="form-vip" onsubmit="event.preventDefault(); alert('Inscrição realizada com sucesso!');" style="display: flex; flex-direction: column; gap: 20px; text-align: left;">
-                    <div class="grupo-input">
-                        <label for="whatsapp" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 14px;">WhatsApp *</label>
-                        <input type="text" id="whatsapp" required placeholder="(00) 00000-0000" style="width: 100%; padding: 14px; background: #0d0d0d; border: 1px solid #c5a880; color: #fff; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif;">
-                    </div>
-                    <div class="grupo-input">
-                        <label for="email" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 14px;">E-mail *</label>
-                        <input type="email" id="email" required placeholder="seu@email.com" style="width: 100%; padding: 14px; background: #0d0d0d; border: 1px solid #c5a880; color: #fff; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif;">
-                    </div>
-                    <div class="grupo-input">
-                        <label for="nome" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 14px;">Nome *</label>
-                        <input type="text" id="nome" required placeholder="Seu nome completo" style="width: 100%; padding: 14px; background: #0d0d0d; border: 1px solid #c5a880; color: #fff; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif;">
-                    </div>
-                    <div class="grupo-input">
-                        <label for="instagram" style="display: block; color: #ccc; margin-bottom: 8px; font-size: 14px;">Usuário no Instagram *</label>
-                        <input type="text" id="instagram" required placeholder="@meuusuario" style="width: 100%; padding: 14px; background: #0d0d0d; border: 1px solid #c5a880; color: #fff; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif;">
-                    </div>
-                    <button type="submit" class="btn-enviar-vip" style="background-color: #c5a880; color: #0d0d0d; font-weight: 700; padding: 16px; border: none; border-radius: 6px; cursor: pointer; margin-top: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; width: 100%; transition: background 0.3s;">Quero fazer parte</button>
-                </form>
-            </div>
-        </section>
-
     </main>
 
-    <!-- RODAPÉ COM OS LINKS REAIS E EXATOS -->
-    <footer class="footer-site">
-        <div class="footer-conteudo">
-            <div class="footer-coluna">
-                <h3>SE APAIXONE COMIGO</h3>
-                <div class="footer-sociais">
-                    <a href="https://instagram.com/jessica_escritora" target="_blank">Instagram</a>
-                    <a href="https://www.amazon.com.br/stores/author/B0CVVC7432/allbooks?ingress=0&visitId=e14b7d9a-c89e-447a-851c-27ed2e7ebd3e" target="_blank">Amazon</a>
+    <!-- Modal do Trailer -->
+    <div id="trailer-modal" class="modal-overlay" onclick="closeTrailerModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeTrailerModal(event)">&times;</button>
+            <video id="modal-video" controls playsinline class="media-element video-proportional" style="width: 100%; height: 450px;">
+                <source src="videolançamento.MP4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- Modal Dinâmico de Detalhes dos Livros -->
+    <div id="details-modal" class="modal-overlay" onclick="closeDetailsModal(event)">
+        <div class="modal-content modal-large" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeDetailsModal(event)">&times;</button>
+            <div class="modal-details-grid">
+                <div class="modal-book-img">
+                    <img id="modal-img" src="" alt="Capa do Livro" class="media-element photo-contain" style="height: 420px; border-radius: 10px;">
+                </div>
+                <div class="modal-book-text">
+                    <span id="modal-cat" class="launch-sub-cat">ROMANCE</span>
+                    <h2 id="modal-title" style="font-size: 2.2rem; color: var(--gold-light); margin-bottom: 1rem;">Título</h2>
+                    
+                    <span style="font-size: 0.75rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 0.5rem;">Categorias</span>
+                    <div id="modal-tags" class="launch-tags-row" style="margin-bottom: 1rem;">
+                        <!-- Tags dinâmicas -->
+                    </div>
+
+                    <span style="font-size: 0.75rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 0.5rem;">Sinopse</span>
+                    <p id="modal-desc" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem; max-height: 180px; overflow-y: auto; padding-right: 5px;">
+                        Sinopse do livro...
+                    </p>
+
+                    <div style="background: rgba(212, 175, 55, 0.05); border: 1px solid var(--border-gold); padding: 0.8rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                        <span style="font-size: 0.7rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 0.3rem;">⚠️ Aviso de Conteúdo</span>
+                        <p style="font-size: 0.78rem; color: #a0aec0; line-height: 1.4;">
+                            • Obra indicada para maiores de 18 anos.<br>
+                            • Contém cenas explícitas, temas sensíveis e violência emocional.<br>
+                            • Recomenda-se discrição a leitores sensíveis a gatilhos.
+                        </p>
+                    </div>
+
+                    <a href="#comprar" class="btn-gold-solid" style="width: 100%; justify-content: center;">
+                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        Comprar o Livro
+                    </a>
                 </div>
             </div>
-            <div class="footer-coluna">
-                <h3>CONTATO</h3>
-                <p>Assessoria / Contato profissional</p>
-                <p>contato@jessicaalmeida.com</p>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col-main">
+                <h3 class="footer-signature">Jéssica Almeida</h3>
+                <p>Romances intensos, paixões inesquecíveis e histórias inesquecíveis para sentir até a última página.</p>
             </div>
-            <div class="footer-coluna direitos">
-                <p>Jéssica Almeida &copy; 2026</p>
-                <p>Todos os direitos reservados</p>
+            <div class="footer-col-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#books">Livros</a></li>
+                    <li><a href="#about">Sobre Mim</a></li>
+                    <li><a href="#jessverso">Jessverso</a></li>
+                    <li><a href="#vip">Leitor VIP</a></li>
+                </ul>
             </div>
+            <div class="footer-col-social">
+                <h4>Conexões</h4>
+                <div class="social-links-row">
+                    <a href="#" class="social-circle" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" stroke-width="1.5" stroke="currentColor" fill="none"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke-width="1.5" stroke="currentColor" fill="none"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" stroke-width="1.5" stroke="currentColor" stroke-linecap="round"/></svg>
+                    </a>
+                    <a href="#" class="social-circle" aria-label="Livros">
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" stroke-width="1.5" stroke="currentColor" fill="none"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" stroke-width="1.5" stroke="currentColor" fill="none"/></svg>
+                    </a>
+                    <a href="#" class="social-circle" aria-label="E-mail">
+                        <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" stroke-width="1.5" stroke="currentColor" fill="none"/><path d="m22 7-10 7L2 7" stroke-width="1.5" stroke="currentColor" fill="none"/></svg>
+                    </a>
+                </div>
+                <span class="footer-email-text">assessoria@jessicaalmeida.com.br</span>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <p>&copy; 2026 Jéssica Almeida. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- SCRIPT SIMPLES PARA NAVEGAÇÃO ENTRE ABAS -->
+    <!-- Script de Controle e Banco de Dados dos Livros -->
     <script>
-        function mudarAba(nomeAba) {
-            // Esconde todas as abas
-            const abas = document.querySelectorAll('.aba-conteudo');
-            abas.forEach(aba => aba.classList.remove('ativa'));
-
-            // Mostra a aba selecionada
-            const abaAtiva = document.getElementById('aba-' + nomeAba);
-            if (abaAtiva) {
-                abaAtiva.classList.add('ativa');
+        const booksData = {
+            'launch': {
+                img: 'cativadomafioso.JPEG',
+                cat: 'LANÇAMENTO • ROMANCE',
+                title: 'Cativa do Mafioso Viúvo',
+                tags: ['Romance Proibido na Máfia', 'Age Gap', 'Mocinha Virgem', 'Mocinho Controlador', 'Inimigos para Amantes', 'Slow Burn'],
+                desc: 'Valentina nunca imaginou que seu destino estaria atado ao sobrenome mais temido da Itália. Quando seu pai contrai uma dívida impossível com uma família poderosa, ela descobre que o preço da liberdade de sua família é ela mesma.<br><br>Dante perdeu sua esposa há três anos. Desde então, governa seu império com frieza absoluta, sem permitir que ninguém se aproxime de suas cicatrizes. Perigoso, intocável e tudo o que Valentina teme, ele sente algo despertar quando olha nos olhos dela pela primeira vez.'
+            },
+            'book1': {
+                img: 'livro1.jpeg',
+                cat: 'ROMANCE VOLUMOSO • SÉRIE ACORDOS IMPLACÁVEIS - LIVRO 01',
+                title: 'Rejeitada pelo Mafioso Viúvo e Perverso',
+                tags: ['Dark Romance', 'Máfia', 'Age Gap', 'Segredos Ocultos'],
+                desc: 'Nas sombras de um império construído com sangue e regras implacáveis, ele controla cada passo ao seu redor. Quando uma intrusa desafia sua autoridade, a linha entre punição e rendição se torna perigosamente tênue.'
+            },
+            'book2': {
+                img: 'livro2.jpeg',
+                cat: 'ROMANCE VOLUME II • A FILHA INESPERADA DO FEDERAL',
+                title: 'O Viúvo',
+                tags: ['Vingança', 'Aliança Letal', 'Amor e Ódio', 'Intriga Familiar'],
+                desc: 'Juramentos selados no altar da perdição não podem ser quebrados sem consequências fatais. Divididos entre o dever com o clã e um sentimento que consome tudo.'
+            },
+            'book3': {
+                img: 'livro3.jpeg',
+                cat: 'STANDALONE • SÉRIE DELIRIOS IRRESISTÍVEIS - LIVRO 4',
+                title: 'Razões para Te Odiar',
+                tags: ['Comédia Romântica', 'Segunda Chance', 'Drama Intenso'],
+                desc: 'Feridas do passado deixaram cicatrizes profundas na alma de quem um dia governou sem piedade. Mas quando o destino coloca em seu caminho a única mulher capaz de desarmar suas defesas...'
+            },
+            'book4': {
+                img: 'livro4.jpeg',
+                cat: 'STANDALONE • SÉRIE ACORDOS IMPLACÁVEIS - LIVRO 02',
+                title: 'Sob o Domínio do Mafioso Possessivo',
+                tags: ['Máfia & Poder', 'Atração Fatal', 'Segredos Mortais'],
+                desc: 'O poder absoluto cobra um preço alto, e o preço dele foi a própria humanidade. Até que ela apareceu, trazendo luz para os cantos mais escuros de sua fortaleza.'
+            },
+            'book5': {
+                img: 'livro5.jpeg',
+                cat: 'STANDALONE • SÉRIE ACORDOS IMPLACÁVEIS - LIVRO 03',
+                title: 'A Noiva Substituta do Mafioso Amargurado',
+                tags: ['Mistério', 'Paixão Obsessiva', 'Perigo Iminente'],
+                desc: 'As regras da noite pertencem a quem tem coragem de quebrá-las. Envolto em mistérios e cercado por inimigos invisíveis, ele encontra na lealdade inesperada dela a força que faltava.'
             }
+        };
 
-            // Rola a página suavemente para o topo
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        const slides = document.querySelectorAll('#home .media-slide');
+        const video = document.getElementById('launch-video');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active-slide');
+            if (slides[currentSlide].contains(video) && !video.paused) {
+                video.pause();
+            }
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active-slide');
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        function openTrailerModal(e) {
+            e.preventDefault();
+            const modal = document.getElementById('trailer-modal');
+            const modalVideo = document.getElementById('modal-video');
+            modal.style.display = 'flex';
+            modalVideo.play();
+        }
+
+        function closeTrailerModal(e) {
+            e.preventDefault();
+            const modal = document.getElementById('trailer-modal');
+            const modalVideo = document.getElementById('modal-video');
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+            modal.style.display = 'none';
+        }
+
+        function openDetailsModal(e, bookKey) {
+            e.preventDefault();
+            const data = booksData[bookKey];
+            if (!data) return;
+
+            document.getElementById('modal-img').src = data.img;
+            document.getElementById('modal-cat').innerText = data.cat;
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-desc').innerHTML = data.desc;
+
+            const tagsContainer = document.getElementById('modal-tags');
+            tagsContainer.innerHTML = '';
+            data.tags.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'ltag';
+                span.innerText = tag;
+                tagsContainer.appendChild(span);
+            });
+
+            document.getElementById('details-modal').style.display = 'flex';
+        }
+
+        function closeDetailsModal(e) {
+            e.preventDefault();
+            document.getElementById('details-modal').style.display = 'none';
         }
     </script>
+
 </body>
 </html>
